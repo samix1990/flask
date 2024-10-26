@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشغيل سكربت Selenium</title>
+</head>
+<body>
+    <h1>تشغيل سكربت Selenium - صفحة 1</h1>
+    <button id="run-script">تشغيل السكربت 1</button>
+
+    <script>
+        document.getElementById("run-script").addEventListener("click", function() {
+            // إرسال طلب لتشغيل السكربت على 127.0.0.1:5000 من localhost
+            fetch('http://127.0.0.1:5000/run-selenium/1')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Script executed successfully');
+                    } else {
+                        console.log('Error occurred during script execution');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
